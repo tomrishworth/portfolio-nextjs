@@ -1,15 +1,5 @@
-"use client";
-import React, { useRef, useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
-import imagesLoaded from "imagesloaded";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import useIsomorphicLayoutEffect from "./useIsomorphicLayoutEffect";
-
-// Register GSAP plugin
-if (typeof window !== "undefined" && gsap && !(gsap as any).ScrollTrigger) {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 interface ProjectImage {
   asset?: {
@@ -36,8 +26,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   images,
   technologies,
 }) => {
-  const [allImagesLoaded, setAllImagesLoaded] = React.useState(false);
-
   return (
     <div className="project-card lg:grid lg:grid-cols-[600px_1fr] gap-10 relative">
       <div className="pl-6 md:pl-12 pr-6 md:pr-12 lg:sticky lg:top-[30px] lg:h-[fit-content] mb-12 lg:mb-0">
@@ -66,7 +54,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             const imageWidth = image.asset?.metadata?.dimensions?.width;
             const imageHeight = image.asset?.metadata?.dimensions?.height;
             if (imageUrl && imageWidth && imageHeight) {
-              const isLast = idx === images.length - 1;
               return (
                 <div key={imageUrl} className="w-full">
                   <Image

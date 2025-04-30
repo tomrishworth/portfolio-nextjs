@@ -61,8 +61,9 @@ const Hero = () => {
             className="max-w-3xs md:max-w-2xs"
           />
           <h1 className="text-lg md:text-2xl text-gray-900">
-            Hey there! I'm a Product Designer and Frontend Developer crafting
-            digital experiences for over 15 years. Based in Auckland, NZ.
+            Hey there! I&apos;m a Product Designer and Frontend Developer
+            crafting digital experiences for over 15 years. Based in Auckland,
+            NZ.
           </h1>
           <div className="flex items-center gap-4 mt-2 md:mt-6">
             {socialLinks.map((link) => (

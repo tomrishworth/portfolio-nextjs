@@ -1,15 +1,12 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import Lenis from "@studio-freight/lenis";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Ensure GSAP plugin is registered
-if (typeof window !== "undefined" && gsap && !(gsap as any).ScrollTrigger) {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
-export default function LenisProvider({ children }: { children: React.ReactNode }) {
+export default function LenisProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
@@ -21,7 +18,7 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
       syncTouch: true,
       gestureOrientation: "vertical",
       wheelMultiplier: 1,
-      touchMultiplier: 1.5
+      touchMultiplier: 1.5,
     });
     lenisRef.current = lenis;
 
@@ -30,14 +27,6 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
-
-    // Sync ScrollTrigger with Lenis
-    function update() {
-      ScrollTrigger.update();
-    }
-    lenis.on("scroll", update);
-    ScrollTrigger.defaults({ scroller: window }); // Use window as scroller
-    ScrollTrigger.refresh();
 
     return () => {
       lenis.destroy();

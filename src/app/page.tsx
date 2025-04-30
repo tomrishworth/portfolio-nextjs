@@ -68,7 +68,7 @@ export default async function Home() {
           </p>
         </div>
         <ul className="flex flex-col gap-y-0">
-          {projects.map((project: Project, idx: number) => (
+          {projects.map((project: Project) => (
             <li
               key={project._id}
               className="mb-16 pb-16 border-b-2 border-gray-200"
