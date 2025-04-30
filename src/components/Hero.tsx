@@ -49,7 +49,7 @@ const Hero = () => {
         alt="Tom Rishworth"
         fill
         priority
-        className="object-cover w-full h-full"
+        className={`${isMobile ? "object-contain object-bottom" : "object-cover"} w-full h-full`}
       />
       <div className="absolute inset-0 flex flex-col items-start justify-start z-10">
         <div className="max-w-xl lg:max-w-3xl xl:max-w-3xl pt-4 md:pt-24 lg:pt-40 pl-6 md:pl-24 lg:pl-60">
@@ -58,10 +58,10 @@ const Hero = () => {
             alt="Tom Rishworth"
             width={1024}
             height={361}
-            className="max-w-3xs md:max-w-2xs"
+            className="max-w-[200px] md:max-w-2xs"
           />
           <h1 className="text-lg md:text-2xl text-gray-900">
-            Hey there! I&apos;m a Product Designer and Frontend Developer
+            Hey there! I&apos;m a Digital Designer and Frontend Developer
             crafting digital experiences for over 15 years. Based in Auckland,
             NZ.
           </h1>
