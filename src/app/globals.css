@@ -24,3 +24,17 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* .bg-pattern {
+  background-attachment: fixed;
+  background-size: 10px 10px;
+  --pattern-fg:
+    color-mix(in oklab, var(--color-black) 5%, transparent);
+  background-image: repeating-linear-gradient(315deg, var(--pattern-fg) 0, var(--pattern-fg) 1px, transparent 0, transparent 50%);
+} */
+
+.icon {
+  width: 2em;
+  height: 2em;
+  vertical-align: -0.125em;
+}

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Lexend } from 'next/font/google';
-
+import LenisProvider from '../components/LenisProvider';
 import './globals.css';
 
 const lexend = Lexend({
@@ -10,8 +10,8 @@ const lexend = Lexend({
 });
 
 export const metadata: Metadata = {
-  title: "Stuff I've done",
-  description: 'Tom Rishworth - My Portfolio',
+  title: "Tom Rishworth - My Portfolio",
+  description: 'Stuff I\'ve done',
 };
 
 export default function RootLayout({
@@ -21,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={lexend.className}>{children}</body>
+      <body className={lexend.className}>
+        <LenisProvider>{children}</LenisProvider>
+      </body>
     </html>
   );
 }
