@@ -34,27 +34,31 @@ interface Project extends SanityDocument {
   technologies?: string[];
 }
 
-const PROJECTS_QUERY = `*[
-  _type == "project"
-]|order(publishedAt desc)[0...12]{
-  _id,
-  title,
-  description,
-  images[]{
-    asset->{
-      url, 
-      metadata{
-        dimensions
+const PROJECTS_QUERY = `*[_type == "projectsOrder"][0]{
+  projects[]->{
+    _id,
+    title,
+    description,
+    images[]{
+      asset->{
+        url, 
+        metadata{
+          dimensions
+        }
       }
-    }
-  },
-  technologies
+    },
+    technologies
+  }
 }`;
 
 const options = { next: { revalidate: 30 } };
 
 export default async function Home() {
-  const projects = await client.fetch<Project[]>(PROJECTS_QUERY, {}, options);
+  const { projects = [] } = await client.fetch<{ projects: Project[] }>(
+    PROJECTS_QUERY,
+    {},
+    options
+  );
 
   return (
     <>
