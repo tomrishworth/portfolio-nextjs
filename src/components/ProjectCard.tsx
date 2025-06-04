@@ -86,7 +86,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, images, t
       {images && images.length > 0 && (
         <div className={`project-images  ${styles['project-images']} mb-14`}>
           <Slider {...settings}>
-            {images.map((image, idx) => {
+            {images.map((image) => {
               const imageUrl = image.asset?.url;
               const imageWidth = image.asset?.metadata?.dimensions?.width;
               const imageHeight = image.asset?.metadata?.dimensions?.height;
