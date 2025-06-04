@@ -1,0 +1,57 @@
+.project-images :global(.slick-dots) {
+  bottom: -30px;
+}
+
+.project-images :global(.slick-dots li) {
+  margin: 0;
+}
+
+.project-images :global(.slick-dots li button:before) {
+  color: #4a5568;
+  font-size: 8px;
+}
+
+.project-images :global(.slick-dots li.slick-active button:before) {
+  color: #2d3748;
+}
+
+.project-images :global(.slick-prev),
+.project-images :global(.slick-next) {
+  z-index: 1;
+}
+
+.project-images :global(.slick-prev) {
+  left: 10px;
+}
+
+.project-images :global(.slick-next) {
+  right: 10px;
+}
+
+.project-images :global(.arrow) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  display: none;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Show arrows only on medium devices and up */
+@media (min-width: 768px) {
+  .project-images :global(.arrow) {
+    display: flex;
+  }
+}
+
+.project-images :global(.arrow-next) {
+  justify-content: flex-end;
+  right: -50px;
+}
+
+.project-images :global(.arrow-previous) {
+  justify-content: flex-start;
+  left: -50px;
+}
