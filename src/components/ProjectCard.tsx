@@ -111,7 +111,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, images, t
       <div className='mb-12'>
         <h2 className='text-2xl mb-4 mt-0'>{title}</h2>{' '}
         <p className='text-gray-700 dark:text-gray-50 mb-4'>{description}</p>
-        {technologies && technologies.length > 0 && (
+        {/* {technologies && technologies.length > 0 && (
           <div className='mt-4'>
             <h3 className='mb-2'>Technologies</h3>
             <div className='flex flex-wrap gap-2'>
@@ -122,7 +122,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, images, t
               ))}
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

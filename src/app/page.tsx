@@ -62,9 +62,9 @@ export default async function Home() {
         <Hero />
         <div className='mb-6 md:my-28 pl-6 pr-6 md:pl-30 lg:max-w-[600px]'>
           <h1 className='text-4xl mt-8 mb-4'>Recent Projects</h1>
-          <p className='text-gray-700 dark:text-gray-200'>
+          {/* <p className='text-gray-700 dark:text-gray-200'>
             With these projects I have been involved with Wireframing, UI Design & Frontend Development
-          </p>
+          </p> */}
         </div>
         <ul className='grid grid-cols-1 xl:grid-cols-2 border-t-1 border-gray-200'>
           {projects.map((project: Project, index: number) => (
