@@ -31,7 +31,7 @@ interface Project extends SanityDocument {
   title?: string;
   description?: string;
   images?: ProjectImage[];
-  technologies?: string[];
+  // technologies?: string[];
 }
 
 const PROJECTS_QUERY = `*[_type == "projectsOrder"][0]{
@@ -78,7 +78,7 @@ export default async function Home() {
                 title={project.title || ''}
                 description={project.description || ''}
                 images={project.images}
-                technologies={project.technologies}
+                // technologies={project.technologies}
               />
             </li>
           ))}

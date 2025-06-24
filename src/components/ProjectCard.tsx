@@ -22,10 +22,10 @@ interface ProjectCardProps {
   title: string;
   description: string;
   images?: ProjectImage[];
-  technologies?: string[];
+  // technologies?: string[];
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, images, technologies }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, images }) => {
   interface ArrowProps {
     className?: string;
     style?: React.CSSProperties;
